@@ -1,0 +1,35 @@
+h1
+{
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+h2{
+  color: red;
+  font-size: 18px
+
+}
+
+b
+{
+  color: #333333
+}
+
+.product
+{
+  width: 33.33%;
+  font-style: Garamond;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.rating{
+  font-size: x-small
+}
+
+img{
+  height: 300px;
+  width : 300px,
+}

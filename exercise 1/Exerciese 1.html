@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>React Intro</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    .NavBar
+    {
+      background-color: blue;
+      width: 100%;
+      padding-left: 20px;
+    }
+
+    .navbar
+    {
+        display: flex;
+        background-color: cornflowerblue;
+        align-items: center;
+    }
+
+    a{
+        text-align: center;
+        vertical-align: middle;
+        color: white;
+    }
+    
+    nav
+    {
+        padding-left: 10%;
+        display: flex;
+        width: 50%;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    body{
+        background-color: grey;
+        font-style: Garamond;
+    }
+
+    App{
+      font-style: Arial;
+    }
+    .mainArticle{
+        width: 75%;
+        align-content: center;
+        background-color: honeydew;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .sideArticle
+    {
+        background-color: honeydew;
+        border-radius: 15px;
+        margin: auto;
+        margin-left: 5%;
+    }
+    
+    .articles{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10%;
+        align-items: flex-start;
+    }
+
+    .flowRow{
+        display: flex;
+        flex-flow: row;
+    }
+
+    .bigNumber{
+        font-size: 300%;
+        color: turquoise;
+        margin-right: 10%;
+    }
+
+    .alert
+    {
+      background-color: aquamarine;
+      text-align: center;
+      font-size: x-large;
+      margin: auto;
+      margin-top: 20px;
+    }
+  
+    .mainBlock{
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="application"></div>
+
+  <script type="text/babel">  
+    const SideArticle = props =>{
+        return <div>
+        <div className = "flowRow">
+                <p className="bigNumber">{props.id}</p>
+                <p><b>{props.Title}</b> {props.Text}</p>
+            </div>
+            <hr/>
+            </div>
+
+    }
+
+
+    const SideArticles = props =>{
+        return <div className = "sideArticle">
+            <h2>Other Articles Of Note</h2>
+            <hr/>
+                {props.items.map(i => <SideArticle {...i} key={ i.id }/>)}
+            </div>
+    }
+
+
+    const MainArticle = props => {
+        return <div className = "mainArticle">
+               <img src={props.mainArticleImage}/>
+                <h1 >{props.mainArticleTitle}</h1>
+                <p>{props.mainArticleText}</p>
+            </div>
+    }
+
+    
+    
+    const NavLink = props => {
+      return <a> {props.value} </a>
+    }
+
+    const NavBar = props => {
+      return <nav>
+        {
+          props.items.map(i => <NavLink {...i} key={ i.id }/>)
+        }
+      </nav>
+    }
+
+    
+    const Title = props => {
+      return <div className = "navbar">
+        <h1 id='title'>{ props.applicationName }</h1>
+      </div>
+    }
+
+    const Alert = props => {
+        return <div>
+          <h4 className = "alert"><b> {props.Title} </b>{props.Text}</h4>
+        </div>
+      }
+
+    const Alerts = props => {
+      return <>
+      {
+      props.items.map(i => <Alert {...i} key = {i.id}/>)
+      }
+      </>
+    }
+
+    
+    const App = props => {
+      const items = [
+          {id:1, value:"WORLD NEWS",class: "clickLink"},
+          {id:2, value:"LOCAL NEWS",class: "clickLink"},
+          {id:3, value:"WORLD OLDS",class: "clickLink"},
+          {id:4, value:"LOCAL OLDS",class: "clickLink"}
+      ];
+
+      const sideStuff = [
+          {id:1, Title: "OH NO",Text:"A man has fallen into the water in lego city"},
+          {id:2, Title: "Mars Attacks",Text:"Mars attacks wit' electric gat Not for sapien abduction (what's up then?!) Billy took a laser to the mug piece; hallowed out the mandibleChannel headquarters order the cannonballs"},
+          {id:3, Title: "Rick and Morty Creator Speaks about Alligations",Text:"To be fair, you have to have a very high IQ to understand Rick and Morty. The humour is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly woven into his characterisation- his personal philosophy draws heavily from Narodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realise that they're not just funny- they say something deep about LIFE. As a consequence people who dislike Rick & Morty truly ARE idiots- of course they wouldn't appreciate, for instance, the humour in Rick's existential catchphrase \"Wubba Lubba Dub Dub,\" which itself is a cryptic reference to Turgenev's Russian epic Fathers and Sons. I'm smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon's genius wit unfolds itself on their television screens. What fools.. how I pity them. 😂"},
+          {id:4, Title: "LOok out A SniPer",Text: "(҂‾ ▵‾)︻デ═一 (˚▽˚’!)/   What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little \"clever\" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo."}
+      ]
+
+      const alertThings = [
+        {id:1,Title:"New deal proving unfavorable to Faust:",Text: "apparently the litteral devil was not a trustworthy source"},
+        {id:2, Title: "Princess Diana Back From The Dead And Blaming Trump????", Text: "No, but that sure would be wild wouldn't it"}
+      ]
+
+      const text = "text";
+      const title = "title";
+      const image = "https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/08/snakes-on-a-plane-meme.jpg?q=50&fit=contain&w=767&h=384&dpr=1.5"
+
+      const { applicationDescription, applicationName } = props;
+
+      return <div>
+      <div className='navbar'>
+        <Title
+          applicationName={ applicationName }
+        />
+        <NavBar items={ items } />
+      </div>
+      <div className = "mainBlock">
+        <Alerts items={ alertThings }/>
+      <div class = "articles">
+        <MainArticle mainArticleImage = {image} mainArticleText = "I’ve been thinking. When life gives you lemons? Don’t make lemonade. Make life take the lemons back! Get mad! I don’t want your damn lemons! What am I supposed to do with these? Demand to see life’s manager! Make life rue the day it thought is could give me lemons! Do you know who I am? I’m the man who’s going to burn your house down! With the lemons! I’m going to get my engineers to invent a combustible lemon that burns your house down! Cave here. Just so you know, this mic isn't two way. Can't hear a damn thing you're saying, so don't waste any oxygen trying to talk. [off mic] What? [on mic] My assistant Greg says some of these alternate Earths may not have oxygen. The air might be nitrogen or methane or, hell, everybody's head might be inside out. So just take little itty bitty breaths and if anybody asks you why your head's inside out, remember it's only inside out from their perspective, and you're fine. Head-wise. Trouble-wise, you're in a lot of it and you should probably run. Alright, enough hypotheticals. Let's test this test! Test subject, can you hear me? Congratulations! You are the world's first half-man, half-machine police officer! Well, first batch. There was a pretty big shootout. Bought all your caracasses off the mayor. Anyway, you should be proud to be a part of Aperture's android law enforcement initiative. Or, as someone who's good at naming things, i.e. me, would call it, ROBO -- No. [suddenly coming to him] Robot-a-Cop! Oh, that's much better. Now, before we get you solving crimes, we gotta getcha to solve this test. Promised the mayor I'd make sure you weren't all unstable potatoheads before I gave you all guns." mainArticleTitle = "Real Life Tony Stark Threatens Scientists"/>
+        <SideArticles items={sideStuff}/>
+      </div>
+      </div>
+      </div>
+    }
+
+    /* Render the App component */
+    ReactDOM.render(
+      <App
+        applicationName={ "Very Real News" }
+      />,
+      document.getElementById('application')
+    );
+  </script>
+</body>
+</html>

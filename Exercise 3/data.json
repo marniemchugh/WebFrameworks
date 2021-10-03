@@ -1,0 +1,113 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "An Open Door On a Cold Night",
+      "seller": "Dick Powers",
+      "price": 11.37,
+      "rating": 4.5,
+      "image": "sticker_1.JFIF",
+      "warning": ""
+    },
+    {
+      "id": 2,
+      "name": "Apples and Oranges",
+      "seller": "Lady Lamb",
+      "price": 4.50,
+      "rating": 4,
+      "image": "sticker_2.JFIF",
+      "warning": "Probably Cursed"
+    },
+    {
+      "id": 3,
+      "name": "Light Was Hard to Learn",
+      "seller": "Fiona Apple",
+      "price": 3.99,
+      "rating": 5,
+      "image": "sticker_3.JFIF",
+      "warning": "Just A Sticker"
+    },
+    {
+      "id": 4,
+      "name": "Prophet of Fear",
+      "seller": "Fish in A Birdcage",
+      "price": 2.99,
+      "rating": 5,
+      "image": "sticker_4.JFIF",
+      "warning": ""
+     },
+     {
+       "id":5,
+       "name":"She Smoked Dried Roses",
+       "seller":"Matilda",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_5.JFIF",
+       "warning": "Scratch and Sniff"
+      }
+      ,{
+        "id":6,
+       "name":"Prophet of Freedom",
+       "seller":"宮崎 駿",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_6.JPG",
+       "warning": "Enchanted With Flight"
+      }
+      ,{
+        "id":7,
+       "name":"A Time of Fire and Fright",
+       "seller":"Matilda",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_7.jpg",
+       "warning": ""
+      }
+      ,{
+        "id":8,
+       "name":"A Mistake in Transmutation",
+       "seller":"A Presumably Dead Arm",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_8.jpg",
+       "warning": "Cat not Included"
+      }
+      ,{
+        "id":9,
+       "name":"A Place Of Many Secrets",
+       "seller":"Kaisa",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_9.jpg",
+       "warning": "Grants Entrance to Insmuth Library"
+      }
+      ,{
+        "id":10,
+       "name":"A Wild Night Out",
+       "seller":"Kaisa",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_10.jpg",
+       "warning": ""
+      }
+      ,{
+        "id":11,
+       "name":"A Drunken Flight",
+       "seller":"Kaisa",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_11.JFIF",
+       "warning": ""
+      }
+      ,{
+        "id":12,
+       "name":"Boo",
+       "seller":"Atta Boy",
+       "price": 3.00,
+       "rating": 4.5,
+       "image": "sticker_12.png",
+       "warning": "Possible Haunting"
+      }
+      
+  ]
+}
