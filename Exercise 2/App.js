@@ -42,12 +42,12 @@ class App extends React.Component {
       if(ident !== -1)
       {
         let shoopingList = [...this.state.items];
-        shoopingList[ident].qty += Math.floor(Math.random()*200000);
+        shoopingList[ident].qty += Math.floor(Math.random()*19) +1;
   
         this.setState({items: shoopingList});
       }
       else{
-        this.state.items = [...this.state.items,{id: this.state.items.length + 1, value: fꚙd, qty: Math.floor(Math.random()*200000), unit: "x",}]
+        this.state.items = [...this.state.items,{id: this.state.items.length + 1, value: fꚙd, qty: Math.floor(Math.random()*19) + 1, unit: "x",}]
         this.setState(this.state.items)
       }
     }
